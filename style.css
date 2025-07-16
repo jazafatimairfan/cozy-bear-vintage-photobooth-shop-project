@@ -257,19 +257,16 @@ ul {
   z-index: 1;  /* Behind the reel */
 }
 
-.reel {
-  position: fixed;
-  top: 0;
-  right: 0;               /* align to right side */
-  width: auto;
-  height: 100vh;          /* full height of viewport */
-  z-index: 1;
+.reel{
+  position: absolute;
+  top: 0px;
+  left: 1000px;
 }
 
 .reel img {
-  height: 100vh;          /* make image fill vertical space */
-  width: auto;            /* maintain aspect ratio */
-  border-radius: 0;       /* optional: remove rounded corners */
+  width: 600px; 
+  height: 100vh;
+  border-radius: 100px;
 }
 
 .photo-layout {
