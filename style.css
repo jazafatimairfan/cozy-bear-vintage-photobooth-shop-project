@@ -204,17 +204,23 @@ ul {
   margin-top: 0; /* remove the vertical margin since it's beside the video now */
 }
 
+.video-frame {
+  position: relative;
+  display: inline-block;
+}
+
 .countdown {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: 80px;
   font-weight: bold;
   color: #6c6f3a;
-  position: absolute;
-  top: 70%;
-  left: 36%;
-  transform: translate(-50%, -50%);
   z-index: 10;
   animation: pop 0.4s ease;
 }
+
 /* Flash effect overlay */
 .flash {
   position: fixed;
