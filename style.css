@@ -435,7 +435,7 @@ ul {
   top: 200px;
   left: 1000px;
   z-index: 2;
-  gap: 0px; /* spacing between teddy and button */
+  gap: 05px; /* spacing between teddy and button */
 }
 
 .side-column .logo3 img {
