@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+  <div class="headerR">
+    <h1></h1>
+    <p>✩°｡ your photo strip is ready <br> thanks for visiting <br> download and enjoy   ✩°｡</p>
+  </div>
+
+<div class="logo3">
+    <img src="teddy.png" alt="Logo">
+  </div>
+
+ <div class="logo4">
+    <img src="logo.png" alt="Logo">
+  </div>
+
+<body class="centered">
+  <h2 class="top-right-heading">Your Photo Strip</h2>
+
+  <div class="photo-layout">
+    <canvas id="finalCanvas" width="180" height="600"></canvas>
+    <button onclick="downloadStrip()" class="button"> ✩ Download ✩</button>
+  </div>
+
+ <script>
+  const canvas = document.getElementById('finalCanvas');
+  const ctx = canvas.getContext('2d');
+  const photos = JSON.parse(localStorage.getItem('photos'));
+
+  if (photos && photos.length === 3) {
+    const size = canvas.width;          // 180
+    const gap = 10;                     // Gap between images
+    const padding = 10;                 // Padding for white border
+    const textHeight = 50;             // Space for text at the bottom
+    const photoHeight = size;          // Height of each square photo
+    const totalPhotoHeight = (photoHeight * photos.length) + (gap * (photos.length - 1));
+    const fullWidth = size + padding * 2;
+    const fullHeight = totalPhotoHeight + textHeight + padding * 2;
+
+    // Resize canvas to include padding + text area
+    canvas.width = fullWidth;
+    canvas.height = fullHeight;
+
+    // Draw white background as border
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, fullWidth, fullHeight);
+
+    // Draw shadow for a subtle 3D effect (optional)
+    ctx.shadowColor = 'rgba(0, 0, 0, 0.2)';
+    ctx.shadowBlur = 15;
+    ctx.shadowOffsetY = 8;
+
+    // Draw photos
+    photos.forEach((dataUrl, i) => {
+      const img = new Image();
+      img.src = dataUrl;
+      img.onload = () => {
+        const x = padding;
+        const y = padding + i * (photoHeight + gap);
+        ctx.filter = 'grayscale(100%) contrast(0.8) brightness(0.9) sepia(0.3)';
+        ctx.drawImage(img, x, y, size, photoHeight);
+        ctx.filter = 'none';
+      };
+    });
+
+    // Wait for images then draw text
+    setTimeout(() => {
+      ctx.shadowColor = 'transparent'; // disable shadow for text
+      ctx.font = "bold 16px 'Poppins', sans-serif";
+      ctx.fillStyle = "#3d3d3d";
+      ctx.textAlign = "center";
+      ctx.fillText("✩", canvas.width / 2, canvas.height - 20);
+    }, 500);
+  }
+
+  function downloadStrip() {
+    const link = document.createElement('a');
+    link.download = 'photostrip.png';
+    link.href = canvas.toDataURL();
+    link.click();
+  }
+</script>
+
+
+
+
+
+ <footer class="site-footer">
+  <p>𓆟 𓆞 °‧ 𓆝 𓆟 𓆞 ·｡°‧ 𓆝 𓆟 𓆞 ·｡°‧ 𓆝 𓆟 𓆞 ·｡°‧ 𓆝 𓆟 𓆞 ·｡°‧ 𓆝 𓆟 𓆞 ·｡°‧ 𓆝 𓆟 𓆞 ·｡ Vintage Photobooth Shop °‧ 𓆝 𓆟 𓆞 ·｡°‧ 𓆝 𓆟 𓆞 ·｡°‧ 𓆝 𓆟 𓆞 ·｡°‧ 𓆝 𓆟 𓆞 ·｡°‧ 𓆝 𓆟 𓆞 ·｡°‧ 𓆝 𓆟 𓆞 ·｡°‧ 𓆝  <br> <br> made by jaza fatima irfan </p>
+</footer>
+
+
+</body>
+</html>

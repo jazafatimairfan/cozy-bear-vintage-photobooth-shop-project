@@ -1,0 +1,398 @@
+:root {
+  --primary: #CF8852;
+  --light: #fbf2ce;
+  --dark: #45462b;
+}
+
+body {
+  background-color: var(--light);
+  color: var(--dark);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.card {
+  background: #ce8b58;
+  padding: 5rem;
+  border-radius: 100px;
+  box-shadow: 0 4px 10px rgba(11, 11, 11, 0.2);
+  max-width: 1000px;
+  position: absolute;
+  top: 700px;
+  left: 650px;
+}
+
+ul {
+  text-align: left;
+}
+
+.button {
+  background: var(--dark);
+  color: #f7f4f4;
+  padding: 10px 20px;
+  border-radius: 12px;
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.2s ease;  /* Smooth animation */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Hover effect: lighter background */
+.button:hover {
+  background-color: #6c6f3a;  /* a lighter shade of var(--dark) */
+  transform: scale(1.05);     /* slight zoom effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Click (press) effect */
+.button:active {
+  transform: scale(0.97);     /* shrink a little on click */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+  @font-face {
+    font-family: 'bucklan';
+    src: url('bucklan.otf') format('truetype');
+  }
+
+  .hero-heading {
+  font-family: 'bucklan', serif;
+  font-size: 35px;
+  text-align: center;
+  margin-top: 10px;
+  position: relative; /* Or absolute for fixed placement */
+}
+
+  h1 {
+    font-family: 'bucklan', serif;
+    font-size: 40px;
+  }
+ h2 {
+    font-family: 'bucklan', serif;
+    font-size: 35px;
+  }
+  h3 {
+    font-family: 'bucklan', serif;
+    font-size: 25px;
+  }
+  h4 {
+    font-family: 'bucklan', serif;
+    font-size: 30px;
+    color: #63643d;
+    text-align: center;
+    
+  }
+
+  .header {
+      background-color: #CF8852;
+      width: 100%;
+      padding: 130px 0px;
+      text-align: center;
+      height: 150px;      
+      display: flex;      
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+      
+    }
+
+    .header h1 {
+      color: #525333;
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    .header p {
+      color: #E8E7E3;
+      font-size: 1rem;
+      margin-top: 20px;
+      letter-spacing: 3px;
+    }
+
+.image-left {
+  position: absolute;
+  top: 450px;
+  left: 0px;
+}
+
+.image-left img {
+  width: 550px;   
+  height: auto;   
+  border-radius: 0px;
+}
+
+.photo-strip {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  position: absolute;
+  top: 550px;  
+  left: 740px; 
+}
+
+.photo-strip img {
+  width: 120px;
+  height: auto;
+}
+
+.logo {
+  position: absolute;
+  top: 18px;
+  left: 540px;
+}
+
+.logo img {
+  width: 300px; 
+  height: 300px;
+}
+
+.logo2 {
+  position: absolute;
+  top: 190px;
+  left: 866px;
+}
+
+.logo2 img {
+  width: 300px; 
+  height: 300px;
+}
+
+.frame{
+  position: absolute;
+  top: 210px;
+  left: 190px;
+}
+
+.frame img {
+  width: 600px; 
+  height: 450px;
+  border-radius: 100px;
+}
+
+
+.video-and-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 200px;  /* space between video and button */
+  margin-top: 100px;  /* same vertical offset as before */
+}
+
+.video-and-button .button {
+  margin-top: 0; /* remove the vertical margin since it's beside the video now */
+}
+
+.countdown {
+  font-size: 80px;
+  font-weight: bold;
+  color: #6c6f3a;
+  position: absolute;
+  top: 70%;
+  left: 36%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  animation: pop 0.4s ease;
+}
+/* Flash effect overlay */
+.flash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 0;
+  z-index: 999;
+  pointer-events: none;
+  animation: flashFade 0.3s ease;
+}
+
+/* Pop animation for countdown */
+@keyframes pop {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* Flash animation */
+@keyframes flashFade {
+  0% { opacity: 0.8; }
+  100% { opacity: 0; }
+}
+
+.vertical-strip {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 100vh;
+  background-color: #45462b;
+  z-index: 1;  /* Behind the reel */
+}
+
+.reel{
+  position: absolute;
+  top: 0px;
+  left: 1000px;
+}
+
+.reel img {
+  width: 600px; 
+  height: 100vh;
+  border-radius: 100px;
+}
+
+.photo-layout {
+  display: flex;
+  align-items: center;         /* center vertically */
+  justify-content: center;
+  gap: 100px;                  /* space between canvas and button */
+  margin-top: 60px;
+  width: 100%;
+}
+
+.download-btn {
+  align-self: flex-start;      /* aligns the button to top of canvas */
+  margin-top: 0;
+  font-size: 1rem;
+  padding: 12px 20px;
+  background-color: var(--dark);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.download-btn:hover {
+  transform: scale(1.05);
+  background-color: #6c6f3a;
+}
+
+.top-right-heading {
+  position: absolute;
+  top: 10px;
+  left: 50px;
+  font-family: 'bucklan', serif;
+  font-size: 35px;
+  margin: 0;
+}
+
+#finalCanvas {
+  border-radius: 0px; /* No rounded corners */
+  background-color: #ffffff;
+  padding: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.logo3 {
+  position: absolute;
+  top: 360px;
+  left: 720px;
+}
+
+.logo3 img {
+  width: 200px; 
+  height: 200px;
+}
+
+ .headerR {
+      background-color: #CF8852;
+      width: 100%;
+      padding: 10px 0px;
+      text-align: center;
+      height: 100px;      
+      display: flex;      
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+      
+    }
+
+    .headerR h1 {
+      color: #525333;
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    .headerR p {
+      color: #E8E7E3;
+      font-size: 1rem;
+      margin-top: 20px;
+      letter-spacing: 3px;
+    }
+
+   .logo4 {
+  position: absolute;
+  top: 10px;
+  left: 50px;
+}
+
+.logo4 img {
+  width: 200px; 
+  height: 200px;
+}
+
+.site-footer {
+  width: 100%;
+  background-color: #45462b;         /* your theme primary color */
+  color: #fbf2ce;                    /* light text color */
+  text-align: center;
+  padding: 20px 10px;
+  font-family: 'poppins', serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin-top: 80px;
+}
+
+.site-footer p {
+  margin: 0;
+  line-height: 1.0;
+}
+
+#finalCanvas {
+  border: 0px double #fff8f0;
+  border-radius: 0px;
+  background-color: #ffffff;
+  padding: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#finalCanvas:hover {
+  transform: rotate(-10deg) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 238, 200, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 215, 150, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 238, 200, 0.5);
+  }
+}
+
+#finalCanvas:hover {
+  animation: glow 1.5s ease-in-out infinite;
+}
