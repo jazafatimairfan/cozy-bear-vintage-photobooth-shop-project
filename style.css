@@ -396,3 +396,22 @@ ul {
 #finalCanvas:hover {
   animation: glow 1.5s ease-in-out infinite;
 }
+
+.video-frame {
+  position: relative;
+  width: 520px; /* match video width + border */
+  height: 390px; /* adjust as per video aspect ratio */
+  background-image: url('grid.jfif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px; /* space inside frame for video */
+  box-sizing: border-box;
+}
+
+.video-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+}
