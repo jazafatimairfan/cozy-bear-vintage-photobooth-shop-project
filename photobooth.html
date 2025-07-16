@@ -6,48 +6,33 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-
 <body class="centered">
   <div class="vertical-strip"></div>
 
   <h2 class="hero-heading">Say Cheese! And Let Us Do Our Magic</h2>
-  <p style="
-  font-weight: bold;
-  font-size: 1.2rem;
-  position: absolute;
-  top: 150px;
-  left: 340px;
-">
-  𓆉⋆.˚𓆝🥞✩₊˚.⚝🧸☾⋆˚.✧🦋⋆.˚𓆡⋆.˚𓇼
-</p>
-
+  <p style="font-weight: bold; font-size: 1.2rem; position: absolute; top: 150px; left: 340px;">
+    𓆉⋆.˚𓆝🥞✩₊˚.⚝🧸☾⋆˚.✧🦋⋆.˚𓆡⋆.˚𓇼
+  </p>
 
   <div class="logo2">
     <img src="t.png" alt="Logo">
   </div>
 
-
+  <!-- Reel image to stay at the right edge -->
   <div class="reel">
-    <img src="reel.png" alt="Logo">
+    <img src="reel.png" alt="Reel">
   </div>
 
-  <div id="countdown" class="countdown"></div>
+  <div class="video-and-button">
+    <div class="video-frame">
+      <video id="video" autoplay playsinline width="500"></video>
+      <div class="countdown" id="countdown"></div>
+      <canvas id="canvas" style="display:none;"></canvas>
+    </div>
 
-<div class="video-and-button">
-  <div class="video-frame">
-    <video id="video" autoplay playsinline width="500"></video>
-    <div class="countdown" id="countdown"></div>
-    <canvas id="canvas" style="display:none;"></canvas>
+    <a href="result.html" class="button" id="viewResult">✩ View Result ✩</a>
   </div>
-  
-  <a href="result.html" class="button" id="viewResult">✩ View Result ✩</a>
-</div>
-</div>
-
-</div>
-</div>
 
   <script src="script.js"></script>
-
 </body>
 </html>
